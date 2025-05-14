@@ -1,5 +1,7 @@
 # n8n Autoscaling System
 
+NOTE: If you want to use Cloudflared please check the 2nd branch for a more secure installation configuration. 
+
 A Docker-based autoscaling solution for n8n workflow automation platform. Dynamically scales worker containers based on Redis queue length.  No need to deal with k8s or any other container scaling provider, a simple script runs it all and is easily configurable.
 
 Tested with hundreds of simultaneous executions running on a 8 core 16gb ram VPS.  
@@ -36,8 +38,9 @@ graph TD
 ## Quick Start
 
 1. Copy or Clone this repository to a folder of your choice
-2. Configure your environment variables in the .env file - defaults are good to go, but set new passwords and tokens.
-3. Run:
+2. Rename .env.example to .env
+3. Configure your environment variables in the .env file - defaults are good to go, but set new passwords and tokens.
+4. Run:
    ```bash
    docker compose up -d
    ```

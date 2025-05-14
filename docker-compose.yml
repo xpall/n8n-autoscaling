@@ -12,7 +12,6 @@ services:
       - redis_data:/data
     networks:
       - n8n-network
-#     - shark     
 
   postgres:
     image: postgres:17
@@ -33,7 +32,6 @@ services:
       retries: 10
     networks:
       - n8n-network
-#     - shark
 
   n8n:
     build:
@@ -78,7 +76,6 @@ services:
         condition: service_healthy
     networks:
       - n8n-network
-#     - shark
     healthcheck:
       test: ['CMD', 'node', '-v']
       interval: 5s
@@ -124,7 +121,6 @@ services:
         condition: service_healthy
     networks:
       - n8n-network
-#     - shark
 
   n8n-worker:
     build:
@@ -168,7 +164,6 @@ services:
         condition: service_healthy
     networks:
       - n8n-network
-#     - shark
     healthcheck:
       test: ['CMD', 'node','-v']
       interval: 5s
@@ -243,5 +238,3 @@ volumes:
 networks:
   n8n-network:
     driver: bridge
-#  shark:
-#    external: true
